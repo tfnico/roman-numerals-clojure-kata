@@ -2,16 +2,17 @@
 	(:use clojure.test))
 
 (defn convert [number]
-  (if (= 0 number) "" "I"))
+  (if (= 0 number)
+    ""
+    (if (= 1 number)
+        "I"
+        "II")))
 
 (deftest one
-  (is (= "I" (convert 1))))
-
-(deftest zero
-  (is (= "" (convert 0))))
-
-(deftest two
-  (is (= "II" (convert 2))))
-
+  (are [number numeral] (= (convert number) numeral)
+                           0 ""
+                           1 "I"
+                           2 "II"
+                          ))
 
 (run-tests 'tfnico.test-roman-numerals)

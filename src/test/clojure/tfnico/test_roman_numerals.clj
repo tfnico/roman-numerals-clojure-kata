@@ -3,11 +3,10 @@
 
 (defn convert [number]
   (let [ mapping {0 "", 1 "I", 2 "II", 3 "III", 4 "IV", 5 "V"}]
-    (if(= number 9)
-      "IX"
-      (if(> number 5)
-        (str "V" (convert (- number 5)))
-        (mapping number)))))
+    (cond
+      (= number 9) "IX"
+      (> number 5) (str "V" (convert (- number 5)))
+      true (mapping number))))
 
 (deftest one
   (are [number numeral] (= (convert number) numeral)

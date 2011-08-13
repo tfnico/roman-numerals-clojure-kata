@@ -4,7 +4,8 @@
 (defn convert [number]
   (let [ mapping {0 "", 1 "I", 2 "II", 3 "III", 4 "IV", 5 "V"}]
     (cond
-      (>= number 10) (str "X" (convert(- number 10)))
+      (>= number 40) (str "XL" (convert (- number 40)))
+      (>= number 10) (str "X" (convert (- number 10)))
       (= number 9) "IX"
       (> number 5) (str "V" (convert (- number 5)))
       true (mapping number))))
@@ -29,6 +30,8 @@
     16 "XVI"
     19 "XIX"
     20 "XX"
-    39 "XXXIX"))
+    39 "XXXIX"
+    40 "XL"
+    49 "XLIX"))
 
 (run-tests 'tfnico.test-roman-numerals)

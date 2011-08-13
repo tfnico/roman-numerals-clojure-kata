@@ -3,5 +3,5 @@
               tfnico.roman-numerals))
 	
 (deftest test-should-be-true
-  (is false))
+  (is (= "I" (convert 1))))
 	

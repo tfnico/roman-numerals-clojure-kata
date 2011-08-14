@@ -4,8 +4,7 @@
 (defn to-use [number numeralMap]
   (if-let [entry (find numeralMap number)]
     entry
-    (if (> number 0) 
-      (to-use (- number 1) numeralMap))))
+    (first (filter (fn [entry] (<= (key entry) number)) numeralMap))))
 
 (defn convert [number]
   (let [numeralMap {4 "IV", 1 "I"}

@@ -2,7 +2,7 @@
 	(:use clojure.test))
 
 (defn convert [number]
-  (let [mappings {0 "", 1 "I", 2 "II", 3 "III"}]
+  (let [mappings {0 "", 1 "I", 2 "II", 3 "III",  4 "IV", 5 "V", 6 "VI"}]
     (mappings number)))
 
 (deftest conversion
@@ -10,6 +10,9 @@
     0 ""
     1 "I"
     2 "II"
-    3 "III"))
+    3 "III"
+    4 "IV"
+    5 "V"
+    6 "VI"))
 
 (run-tests 'tfnico.test-roman-numerals)

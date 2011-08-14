@@ -2,9 +2,11 @@
 	(:use clojure.test))
 
 (defn convert [number]
+  (let [numeralMap {1 "I"}
+        entry (first numeralMap)]
   (if (= 0 number) 
     ""
-    (str "I" (convert (- number 1)))))
+    (str (val entry) (convert (- number (key entry)))))))
 
 (deftest convert-numeral
   (are [number numeral] (= (convert number) numeral)

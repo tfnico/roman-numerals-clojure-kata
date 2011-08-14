@@ -1,7 +1,7 @@
 (ns tfnico.test-roman-numerals
-	(:use clojure.test
-              tfnico.roman-numerals))
+	(:use clojure.test))
 	
-(deftest test-should-be-true
-  (is (= "I" (convert 1))))
+(deftest one-larger-than-zero
+  (is (> 1 0)))
 	
+(run-tests 'tfnico.test-roman-numerals)

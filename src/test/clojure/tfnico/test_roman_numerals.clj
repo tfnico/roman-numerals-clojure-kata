@@ -7,7 +7,7 @@
     (first (filter (fn [entry] (<= (key entry) number)) numeralMap))))
 
 (defn convert [number]
-  (let [numeralMap {4 "IV", 1 "I"}
+  (let [numeralMap {5 "V" 4 "IV", 1 "I"}
         entry (to-use number numeralMap)]
     (if (= 0 number)
       ""
@@ -19,6 +19,10 @@
     1 "I"
     2 "II"
     3 "III"
-    4 "IV"))
+    4 "IV"
+    5 "V"
+    6 "VI"
+    7 "VII"
+    8 "VIII"))
 
 (run-tests 'tfnico.test-roman-numerals)

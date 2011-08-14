@@ -3,14 +3,11 @@
 
 (defn convert [number]
   (let [mappings {0 "", 1 "I", 2 "II", 3 "III",  4 "IV"}]
-    (if (= number 10)
-      "X"
-
-        (if (>= number 9)
-          "IX"
-            (if (>= number 5)
-              (str "V" (convert (- number 5)))
-                (mappings number))))))
+    (cond
+      (= number 10) "X"
+      (= number 9) "IX"
+      (>= number 5) (str "V" (convert (- number 5)))
+      true (mappings number))))
 
 (deftest conversion
   (are [x y] (= (convert x) y)

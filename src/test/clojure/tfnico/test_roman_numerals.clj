@@ -6,11 +6,9 @@
     ""
     "I"))
 
-
-(deftest zero
-  (is (= "" (convert 0))))
-
-(deftest one
-  (is (= "I" (convert 1))))
+(deftest convert-numeral
+  (are [number numeral] (= (convert number) numeral)
+    0 ""
+    1 "I"))
 	
 (run-tests 'tfnico.test-roman-numerals)

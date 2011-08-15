@@ -1,7 +1,11 @@
 (ns tfnico.test-roman-numerals
 	(:use clojure.test))
-	
+
+(defn convert [number]
+  "")
+
 (deftest test-convert
-  (is (= 0 0)))
+  (are [x y ] (= y (convert 0))
+    0 ""))
 	
 (run-tests 'tfnico.test-roman-numerals)

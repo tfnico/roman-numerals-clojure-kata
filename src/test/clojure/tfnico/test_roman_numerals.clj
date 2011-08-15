@@ -2,12 +2,11 @@
 	(:use clojure.test))
 
 (defn convert [number]
-  (let [mapping {0 "", 1 "I", 2 "II", 3 "III", 4 "IV"}]
     (cond
         (>= number 10) (str "X" (convert (- number 10)))
         (= number 9) "IX"
         (>= number 5) (str "V" (convert (- number 5)))
-        true (mapping number))))
+        true (["" "I" "II" "III" "IV"] number)))
 
 (deftest test-convert
   (are [x y ] (= y (convert x))

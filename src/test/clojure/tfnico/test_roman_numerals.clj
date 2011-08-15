@@ -5,6 +5,10 @@
   "")
 	
 (deftest test-convert
-  (is (= "" (convert 0))))
+  (are [x y] (= y (convert x))
+    0 ""))
+
+
+
 	
 (run-tests 'tfnico.test-roman-numerals)

@@ -3,8 +3,8 @@
 
 (defn convert [number]
   (let [mapping {0 "", 1 "I", 2 "II", 3 "III", 4 "IV"}]
-    (if (= number 10)
-      "X"
+    (if (>= number 10)
+      (str "X" (convert (- number 10)))
         (if (= number 9)
             "IX"
             (if (>= number 5)
@@ -23,6 +23,8 @@
     7 "VII"
     8 "VIII"
     9 "IX"
-    10 "X"))
+    10 "X"
+    11 "XI"
+    19 "XIX"))
 	
 (run-tests 'tfnico.test-roman-numerals)

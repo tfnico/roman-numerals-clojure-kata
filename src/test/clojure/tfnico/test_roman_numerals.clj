@@ -4,11 +4,14 @@
 (defn convert [number]
   (if (= 0 number)
     ""
-    "I"))
+    (if (= 1 number)
+      "I"
+      "II")))
 
 (deftest test-convert
   (are [x y ] (= y (convert x))
     0 ""
-    1 "I"))
+    1 "I"
+    2 "II"))
 	
 (run-tests 'tfnico.test-roman-numerals)
